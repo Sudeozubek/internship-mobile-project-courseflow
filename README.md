@@ -29,7 +29,7 @@ CourseFlow is a simple Flutter app for viewing courses from local JSON, opening 
 
 ## Screenshots
 
-Tıklanabilir küçük önizlemeler; tam görsel için resme tıklayın. Ayrıca [docs/README.md](docs/README.md) altında tablo ve aynı galeri var.
+Tüm görseller **`docs/screenshots/`** içinde; terminal kanıtları ayrıca proje kökündeki **`screenshots/`** klasöründe de kopyalanır. Tıklanabilir küçük önizlemeler; tam görsel için resme tıklayın. Ayrıntılı tablo: [docs/README.md](docs/README.md).
 
 <table>
 <tr>
@@ -43,6 +43,18 @@ Tıklanabilir küçük önizlemeler; tam görsel için resme tıklayın. Ayrıca
   <td align="center"><a href="docs/screenshots/06-duyurular.png"><img src="docs/screenshots/06-duyurular.png" width="160" alt="Duyurular"/></a><br/><sub>06 — Duyurular</sub></td>
   <td align="center"><a href="docs/screenshots/07-sınav-takvimi.png"><img src="docs/screenshots/07-sınav-takvimi.png" width="160" alt="Sınav takvimi"/></a><br/><sub>07 — Sınav takvimi</sub></td>
   <td align="center"><a href="docs/screenshots/08-akademik-takvim.png"><img src="docs/screenshots/08-akademik-takvim.png" width="160" alt="Akademik takvim"/></a><br/><sub>08 — Akademik takvim</sub></td>
+</tr>
+</table>
+
+### Çalışma kanıtı (terminal)
+
+Statik analiz ve `flutter run` çıktıları (Chrome ve macOS hedefleri).
+
+<table>
+<tr>
+  <td align="center" width="33%"><a href="docs/screenshots/09-terminal-flutter-analyze.png"><img src="docs/screenshots/09-terminal-flutter-analyze.png" width="200" alt="flutter analyze"/></a><br/><sub>09 — <code>flutter analyze</code></sub></td>
+  <td align="center" width="33%"><a href="docs/screenshots/10-terminal-flutter-run-chrome.png"><img src="docs/screenshots/10-terminal-flutter-run-chrome.png" width="200" alt="flutter run Chrome"/></a><br/><sub>10 — <code>flutter run</code> (Chrome)</sub></td>
+  <td align="center" width="33%"><a href="docs/screenshots/11-terminal-flutter-run-macos.png"><img src="docs/screenshots/11-terminal-flutter-run-macos.png" width="200" alt="flutter run macOS"/></a><br/><sub>11 — <code>flutter run</code> (macOS)</sub></td>
 </tr>
 </table>
 
