@@ -20,13 +20,11 @@ CourseFlow is a simple Flutter app for viewing courses from local JSON, opening 
 
 ## Features
 
-- Course listing
-- Course search/filter (by course name)
-- Course details
-- Navigation with `Navigator.push` / `Navigator.pop`
-- Constructor-passed `Course` to the detail screen
+- Bottom navigation: **Ana sayfa** (portal-style overview cards, static text) and **Dersler**
+- Course listing (`GridView.builder`), search/filter (by course name)
+- Course details (`Navigator.push` / `Navigator.pop`, `Course` via constructor)
 - Local JSON data (`assets/data/courses.json`)
-- Study task completion state (`StatefulWidget`)
+- Study task completion toggle on the detail screen (`StatefulWidget`)
 
 ## How to Run
 
