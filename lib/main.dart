@@ -14,6 +14,7 @@ class CourseFlowApp extends StatelessWidget {
     const Color seed = Color(0xFF4F46E5);
     return MaterialApp(
       title: 'CourseFlow',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: seed,
