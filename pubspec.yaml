@@ -1,0 +1,18 @@
+name: courseflow
+description: CourseFlow – simple course listing and study task tracking (internship project).
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/courses.json
+    - assets/images/
