@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "date": "2026-11-05",
+    "category": "Kayıt",
+    "title": "2026–2027 Güz yarıyılı ek sınav başvuru tarihleri",
+    "body": "Ek sınav başvuruları 10–12 Kasım arasında ÖBS üzerinden yapılacaktır. Onaylanmayan başvurular değerlendirmeye alınmaz."
+  },
+  {
+    "id": 2,
+    "date": "2026-11-04",
+    "category": "Sınav",
+    "title": "Bölüm dersleri vize sınav salonları (güncelleme)",
+    "body": "CSE301 ve CSE302 vize sınavları aynı gün farklı salonlarda yapılacaktır. Güncel salon listesi duyuru panosunda yayımlandı."
+  },
+  {
+    "id": 3,
+    "date": "2026-11-02",
+    "category": "Genel",
+    "title": "Yarıyıl ara tatili kütüphane çalışma saatleri",
+    "body": "Ara tatilde kütüphane hafta içi 09:00–21:00, hafta sonu 10:00–18:00 saatlerinde hizmet verecektir."
+  },
+  {
+    "id": 4,
+    "date": "2026-10-28",
+    "category": "Akademik",
+    "title": "Yazılım laboratuvarı bakım çalışması",
+    "body": "30 Ekim Cuma günü 14:00–18:00 arasında laboratuvara uzaktan erişim kesintiye uğrayabilir."
+  }
+]

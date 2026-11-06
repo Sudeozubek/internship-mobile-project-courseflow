@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "courseCode": "CSE301",
+    "courseName": "Algorithms",
+    "examType": "Vize",
+    "date": "2026-11-28",
+    "time": "10:00",
+    "durationMinutes": 90,
+    "room": "Amfi A / Zemin Kat"
+  },
+  {
+    "id": 2,
+    "courseCode": "CSE302",
+    "courseName": "Database Management",
+    "examType": "Vize",
+    "date": "2026-11-28",
+    "time": "13:30",
+    "durationMinutes": 90,
+    "room": "D106"
+  },
+  {
+    "id": 3,
+    "courseCode": "CSE304",
+    "courseName": "Operating Systems",
+    "examType": "Vize",
+    "date": "2026-11-29",
+    "time": "10:00",
+    "durationMinutes": 90,
+    "room": "D208"
+  },
+  {
+    "id": 4,
+    "courseCode": "CSE306",
+    "courseName": "Mobile Application Development",
+    "examType": "Final",
+    "date": "2027-01-08",
+    "time": "09:30",
+    "durationMinutes": 120,
+    "room": "Bilgisayar Lab 3"
+  }
+]

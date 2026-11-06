@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-/// Minimal “portal style” home: static sections only (no backend, no extra features).
-/// Full UBİS parity is out of scope for the internship brief; this is a visual stub.
+import 'academic_calendar_screen.dart';
+import 'announcements_screen.dart';
+import 'assignments_screen.dart';
+import 'exam_schedule_screen.dart';
+
+/// Portal-style home: shortcuts to mock data screens (bundled JSON, no backend).
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
-
-  static void _toast(BuildContext context, String msg) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(msg), behavior: SnackBarBehavior.floating),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +36,8 @@ class DashboardScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'Dersler ve görevler için “Dersler” sekmesini kullanın. '
-                        'Aşağıdaki kutular örnek portal düzeni içindir (sabit metin).',
+                        'Ders içerikleri ve çalışma maddeleri için “Dersler” sekmesine geçin. '
+                        'Aşağıdaki kutular yerel JSON ile doldurulmuş örnek portal verilerini açar (canlı sistem değil).',
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: cs.onSurfaceVariant,
                           height: 1.35,
@@ -58,29 +56,60 @@ class DashboardScreen extends StatelessWidget {
           icon: Icons.assignment_outlined,
           title: 'Ödevler',
           subtitle:
-              'Bu sürümde ödev listesi yok; görevler ders detayındaki çalışma maddesinde.',
-          onTap: () => _toast(context, 'Ödevler: örnek alan (veri yok).'),
+              'Ders kodu, teslim tarihi ve durum — yerel listeden (mock).',
+          onTap: () {
+            Navigator.push<void>(
+              context,
+              MaterialPageRoute<void>(
+                builder: (_) => const AssignmentsScreen(),
+              ),
+            );
+          },
         ),
         _sectionCard(
           context,
           icon: Icons.campaign_outlined,
           title: 'Duyurular',
-          subtitle: 'Kayıt ve sınav duyuruları burada listelenirdi (örnek).',
-          onTap: () => _toast(context, 'Duyurular: örnek alan.'),
+          subtitle:
+              'Kayıt, sınav ve burs duyuruları — kısa metinli örnek kayıtlar.',
+          onTap: () {
+            Navigator.push<void>(
+              context,
+              MaterialPageRoute<void>(
+                builder: (_) => const AnnouncementsScreen(),
+              ),
+            );
+          },
         ),
         _sectionCard(
           context,
           icon: Icons.event_note_outlined,
           title: 'Sınav takvimi',
-          subtitle: 'Vize / final tarihleri için örnek kart (takvim verisi yok).',
-          onTap: () => _toast(context, 'Sınav takvimi: örnek alan.'),
+          subtitle:
+              'Vize / final / bütünleme satırları — tarih, saat ve salon (mock).',
+          onTap: () {
+            Navigator.push<void>(
+              context,
+              MaterialPageRoute<void>(
+                builder: (_) => const ExamScheduleScreen(),
+              ),
+            );
+          },
         ),
         _sectionCard(
           context,
           icon: Icons.calendar_month_outlined,
           title: 'Akademik takvim',
-          subtitle: 'Dönem başı/sonu ve tatiller (örnek; yerel veri yok).',
-          onTap: () => _toast(context, 'Akademik takvim: örnek alan.'),
+          subtitle:
+              'Dönem, tatil ve sınav haftaları — tarih aralıkları (mock).',
+          onTap: () {
+            Navigator.push<void>(
+              context,
+              MaterialPageRoute<void>(
+                builder: (_) => const AcademicCalendarScreen(),
+              ),
+            );
+          },
         ),
       ],
     );

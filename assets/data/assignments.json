@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "courseCode": "CSE301",
+    "courseName": "Algorithms",
+    "title": "Hafta 6: Graf BFS/DFS uygulaması ve karmaşıklık analizi",
+    "dueDate": "2026-11-14",
+    "status": "Teslim edilmedi"
+  },
+  {
+    "id": 2,
+    "courseCode": "CSE302",
+    "courseName": "Database Management",
+    "title": "Normalizasyon: 3NF’ye geçiş ve SQL sorgu seti",
+    "dueDate": "2026-11-18",
+    "status": "Teslim edilmedi"
+  },
+  {
+    "id": 3,
+    "courseCode": "CSE303",
+    "courseName": "Software Engineering",
+    "title": "Prototip: kullanıcı hikâyesi + kabul kriterleri (1 sayfa)",
+    "dueDate": "2026-11-10",
+    "status": "Geç teslim"
+  },
+  {
+    "id": 4,
+    "courseCode": "CSE305",
+    "courseName": "Web Programming",
+    "title": "Responsive layout: iki breakpoint için ekran görüntüsü",
+    "dueDate": "2026-11-22",
+    "status": "Teslim edilmedi"
+  }
+]

@@ -15,4 +15,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/data/courses.json
+    - assets/data/assignments.json
+    - assets/data/announcements.json
+    - assets/data/exam_schedule.json
+    - assets/data/academic_calendar.json
     - assets/images/
