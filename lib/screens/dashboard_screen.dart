@@ -5,7 +5,7 @@ import 'announcements_screen.dart';
 import 'assignments_screen.dart';
 import 'exam_schedule_screen.dart';
 
-/// Portal-style home: shortcuts to mock data screens (bundled JSON, no backend).
+/// Portal-style home: kısayollar yerel JSON verilerine gider (arka uç yok).
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -37,7 +37,7 @@ class DashboardScreen extends StatelessWidget {
                       const SizedBox(height: 4),
                       Text(
                         'Ders içerikleri ve çalışma maddeleri için “Dersler” sekmesine geçin. '
-                        'Aşağıdaki kutular yerel JSON ile doldurulmuş örnek portal verilerini açar (canlı sistem değil).',
+                        'Aşağıdaki kutular özet bilgilere ve ilgili listelere gider.',
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: cs.onSurfaceVariant,
                           height: 1.35,
@@ -55,8 +55,7 @@ class DashboardScreen extends StatelessWidget {
           context,
           icon: Icons.assignment_outlined,
           title: 'Ödevler',
-          subtitle:
-              'Ders kodu, teslim tarihi ve durum — yerel listeden (mock).',
+          subtitle: 'Ders kodu, teslim tarihi ve durum bilgisi.',
           onTap: () {
             Navigator.push<void>(
               context,
@@ -71,7 +70,7 @@ class DashboardScreen extends StatelessWidget {
           icon: Icons.campaign_outlined,
           title: 'Duyurular',
           subtitle:
-              'Kayıt, sınav ve burs duyuruları — kısa metinli örnek kayıtlar.',
+              'Kayıt, sınav ve burs duyuruları; tarih ve detay metinleri.',
           onTap: () {
             Navigator.push<void>(
               context,
@@ -86,7 +85,7 @@ class DashboardScreen extends StatelessWidget {
           icon: Icons.event_note_outlined,
           title: 'Sınav takvimi',
           subtitle:
-              'Vize / final / bütünleme satırları — tarih, saat ve salon (mock).',
+              'Vize, final ve bütünleme; tarih, saat ve salon bilgileri.',
           onTap: () {
             Navigator.push<void>(
               context,
@@ -100,8 +99,7 @@ class DashboardScreen extends StatelessWidget {
           context,
           icon: Icons.calendar_month_outlined,
           title: 'Akademik takvim',
-          subtitle:
-              'Dönem, tatil ve sınav haftaları — tarih aralıkları (mock).',
+          subtitle: 'Dönem, tatil ve sınav dönemleri; tarih aralıkları.',
           onTap: () {
             Navigator.push<void>(
               context,

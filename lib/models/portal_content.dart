@@ -1,4 +1,4 @@
-/// Mock portal content loaded from local JSON (no backend).
+/// Portal listeleri — yerel JSON’dan yüklenir (arka uç yok).
 
 class AssignmentItem {
   const AssignmentItem({

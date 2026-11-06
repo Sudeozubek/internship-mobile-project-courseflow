@@ -4,7 +4,7 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/portal_content.dart';
 
-/// Loads mock portal lists from bundled JSON files.
+/// Yerel JSON dosyalarından portal listelerini yükler.
 class PortalDataService {
   Future<List<AssignmentItem>> loadAssignments() async {
     return _loadList(
