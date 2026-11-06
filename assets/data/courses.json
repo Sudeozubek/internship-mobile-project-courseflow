@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Algorithms",
+    "code": "CSE301",
+    "instructor": "Dr. Ayşe Yılmaz",
+    "description": "Karmaşıklık analizi, sıralama ve grafik algoritmalarına giriş.",
+    "credits": 3,
+    "task": "Complete the weekly algorithm exercises.",
+    "image": "assets/images/algorithms.png"
+  },
+  {
+    "id": 2,
+    "name": "Database Management",
+    "code": "CSE302",
+    "instructor": "Dr. Mehmet Kaya",
+    "description": "İlişkisel model, SQL ve temel veritabanı tasarımı.",
+    "credits": 4,
+    "task": "Design a small normalized schema and write five SQL queries.",
+    "image": "assets/images/database.png"
+  },
+  {
+    "id": 3,
+    "name": "Software Engineering",
+    "code": "CSE303",
+    "instructor": "Dr. Elif Demir",
+    "description": "Gereksinimler, sürüm kontrolü ve basit süreç modelleri.",
+    "credits": 3,
+    "task": "Write a one-page requirements summary for the course project.",
+    "image": "assets/images/software.png"
+  },
+  {
+    "id": 4,
+    "name": "Operating Systems",
+    "code": "CSE304",
+    "instructor": "Dr. Can Arslan",
+    "description": "İşlemler, bellek ve dosya sistemlerinin temelleri.",
+    "credits": 4,
+    "task": "Summarize process scheduling and submit before the next lab.",
+    "image": "assets/images/software.png"
+  },
+  {
+    "id": 5,
+    "name": "Web Programming",
+    "code": "CSE305",
+    "instructor": "Dr. Zeynep Öztürk",
+    "description": "HTML, CSS ve istemci taraflı etkileşim kavramları.",
+    "credits": 3,
+    "task": "Build a simple static page that lists your weekly progress.",
+    "image": "assets/images/mobile.png"
+  },
+  {
+    "id": 6,
+    "name": "Mobile Application Development",
+    "code": "CSE306",
+    "instructor": "Dr. Emre Şahin",
+    "description": "Flutter ve Material ile temel mobil arayüz geliştirme.",
+    "credits": 3,
+    "task": "Finish the CourseFlow practice module and submit a short report.",
+    "image": "assets/images/mobile.png"
+  }
+]
