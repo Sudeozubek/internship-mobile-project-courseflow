@@ -81,7 +81,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme cs = Theme.of(context).colorScheme;
+
     return Scaffold(
+      backgroundColor: cs.surfaceContainerLowest,
       appBar: AppBar(
         title: const Text('CourseFlow'),
       ),
@@ -136,11 +139,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: TextField(
                         controller: _searchController,
                         onChanged: _onSearchChanged,
+                        textInputAction: TextInputAction.search,
                         decoration: const InputDecoration(
                           hintText: 'Ders adına göre ara…',
-                          border: OutlineInputBorder(),
-                          isDense: true,
-                          prefixIcon: Icon(Icons.search),
+                          prefixIcon: Icon(Icons.search_rounded),
                         ),
                       ),
                     ),
@@ -155,14 +157,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             )
                           : Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 8),
+                                  const EdgeInsets.fromLTRB(12, 4, 12, 12),
                               child: GridView.builder(
                                 gridDelegate:
                                     const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
-                                  mainAxisSpacing: 8,
-                                  crossAxisSpacing: 8,
-                                  childAspectRatio: 0.68,
+                                  mainAxisSpacing: 10,
+                                  crossAxisSpacing: 10,
+                                  childAspectRatio: 0.64,
                                 ),
                                 itemCount: _filteredCourses.length,
                                 itemBuilder: (BuildContext context, int index) {
