@@ -8,6 +8,8 @@ class Course {
     required this.credits,
     required this.task,
     required this.image,
+    this.price,
+    this.fromApi = false,
   });
 
   final int id;
@@ -18,6 +20,11 @@ class Course {
   final int credits;
   final String task;
   final String image;
+  final String? price;
+  final bool fromApi;
+
+  bool get usesNetworkImage =>
+      image.startsWith('http://') || image.startsWith('https://');
 
   factory Course.fromJson(Map<String, dynamic> json) {
     return Course(
@@ -29,6 +36,8 @@ class Course {
       credits: json['credits'] as int,
       task: json['task'] as String,
       image: json['image'] as String,
+      price: json['price'] as String?,
+      fromApi: json['fromApi'] as bool? ?? false,
     );
   }
 
@@ -42,6 +51,8 @@ class Course {
       'credits': credits,
       'task': task,
       'image': image,
+      if (price != null) 'price': price,
+      'fromApi': fromApi,
     };
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/course.dart';
+import 'course_image.dart';
 
 class CourseCard extends StatelessWidget {
   const CourseCard({
@@ -38,26 +39,7 @@ class CourseCard extends StatelessWidget {
                 child: Stack(
                   fit: StackFit.expand,
                   children: <Widget>[
-                    Image.asset(
-                      course.image,
-                      fit: BoxFit.cover,
-                      alignment: Alignment.center,
-                      filterQuality: FilterQuality.medium,
-                      errorBuilder: (
-                        BuildContext context,
-                        Object error,
-                        StackTrace? stackTrace,
-                      ) {
-                        return ColoredBox(
-                          color: cs.primaryContainer,
-                          child: Icon(
-                            Icons.menu_book_rounded,
-                            size: 44,
-                            color: cs.onPrimaryContainer.withValues(alpha: 0.75),
-                          ),
-                        );
-                      },
-                    ),
+                    CourseImage(course: course),
                     DecoratedBox(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(

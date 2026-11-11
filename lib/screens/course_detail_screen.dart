@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/course.dart';
+import '../widgets/course_image.dart';
 
 class CourseDetailScreen extends StatefulWidget {
   const CourseDetailScreen({super.key, required this.course});
@@ -18,15 +19,14 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
   Widget build(BuildContext context) {
     final Course course = widget.course;
     final ThemeData theme = Theme.of(context);
+    final bool catalogItem = course.fromApi;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(course.name),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
           tooltip: 'Geri',
         ),
       ),
@@ -37,21 +37,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
             borderRadius: BorderRadius.circular(12),
             child: AspectRatio(
               aspectRatio: 16 / 9,
-              child: Image.asset(
-                course.image,
-                fit: BoxFit.cover,
-                errorBuilder: (BuildContext context, Object error,
-                    StackTrace? stackTrace) {
-                  return ColoredBox(
-                    color: theme.colorScheme.surfaceContainerHighest,
-                    child: Icon(
-                      Icons.image_not_supported_outlined,
-                      size: 48,
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
-                  );
-                },
-              ),
+              child: CourseImage(course: course),
             ),
           ),
           const SizedBox(height: 16),
@@ -59,17 +45,19 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
             child: Column(
               children: <Widget>[
                 ListTile(
-                  title: const Text('Ders adı'),
+                  title: Text(catalogItem ? 'Ürün adı' : 'Ders adı'),
                   subtitle: Text(course.name),
                 ),
                 const Divider(height: 1),
                 ListTile(
-                  title: const Text('Ders kodu'),
+                  title: Text(catalogItem ? 'Katalog kodu' : 'Ders kodu'),
                   subtitle: Text(course.code),
                 ),
                 const Divider(height: 1),
                 ListTile(
-                  title: const Text('Öğretim görevlisi'),
+                  title: Text(
+                    catalogItem ? 'Kısa açıklama' : 'Öğretim görevlisi',
+                  ),
                   subtitle: Text(course.instructor),
                 ),
                 const Divider(height: 1),
@@ -77,11 +65,20 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                   title: const Text('Açıklama'),
                   subtitle: Text(course.description),
                 ),
-                const Divider(height: 1),
-                ListTile(
-                  title: const Text('Kredi'),
-                  subtitle: Text('${course.credits}'),
-                ),
+                if (course.price != null) ...<Widget>[
+                  const Divider(height: 1),
+                  ListTile(
+                    title: const Text('Fiyat'),
+                    subtitle: Text(course.price!),
+                  ),
+                ],
+                if (!catalogItem) ...<Widget>[
+                  const Divider(height: 1),
+                  ListTile(
+                    title: const Text('Kredi'),
+                    subtitle: Text('${course.credits}'),
+                  ),
+                ],
               ],
             ),
           ),
@@ -93,7 +90,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'Çalışma görevi',
+                    catalogItem ? 'İnceleme görevi' : 'Çalışma görevi',
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),

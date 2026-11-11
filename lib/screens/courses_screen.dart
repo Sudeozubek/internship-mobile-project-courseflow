@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../app_routes.dart';
 import '../models/course.dart';
 import '../services/course_service.dart';
 import '../widgets/course_card.dart';
-import 'course_detail_screen.dart';
 
 /// Course list with search and grid — internship scope: courses + navigation only.
 class CoursesScreen extends StatefulWidget {
@@ -116,9 +116,11 @@ class _CoursesScreenState extends State<CoursesScreen> {
             controller: _searchController,
             onChanged: _onSearchChanged,
             textInputAction: TextInputAction.search,
-            decoration: const InputDecoration(
-              hintText: 'Ders adına göre ara…',
-              prefixIcon: Icon(Icons.search_rounded),
+            decoration: InputDecoration(
+              hintText: _allCourses.isNotEmpty && _allCourses.first.fromApi
+                  ? 'Katalogda ara…'
+                  : 'Ders adına göre ara…',
+              prefixIcon: const Icon(Icons.search_rounded),
             ),
           ),
         ),
@@ -146,12 +148,10 @@ class _CoursesScreenState extends State<CoursesScreen> {
                       return CourseCard(
                         course: course,
                         onDetail: () {
-                          Navigator.push<void>(
+                          Navigator.pushNamed(
                             context,
-                            MaterialPageRoute<void>(
-                              builder: (_) =>
-                                  CourseDetailScreen(course: course),
-                            ),
+                            AppRoutes.courseDetail,
+                            arguments: course,
                           );
                         },
                       );
