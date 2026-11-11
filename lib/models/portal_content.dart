@@ -27,6 +27,29 @@ class AssignmentItem {
       status: json['status'] as String,
     );
   }
+
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'id': id,
+        'courseCode': courseCode,
+        'courseName': courseName,
+        'title': title,
+        'dueDate': dueDate,
+        'status': status,
+      };
+
+  AssignmentItem copyWith({String? status}) {
+    return AssignmentItem(
+      id: id,
+      courseCode: courseCode,
+      courseName: courseName,
+      title: title,
+      dueDate: dueDate,
+      status: status ?? this.status,
+    );
+  }
+
+  bool get canSubmit =>
+      status != 'Teslim edildi' && status != 'Tamamlandı';
 }
 
 class AnnouncementItem {
@@ -53,6 +76,14 @@ class AnnouncementItem {
       body: json['body'] as String,
     );
   }
+
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'id': id,
+        'date': date,
+        'category': category,
+        'title': title,
+        'body': body,
+      };
 }
 
 class ExamSlot {
@@ -88,6 +119,17 @@ class ExamSlot {
       room: json['room'] as String,
     );
   }
+
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'id': id,
+        'courseCode': courseCode,
+        'courseName': courseName,
+        'examType': examType,
+        'date': date,
+        'time': time,
+        'durationMinutes': durationMinutes,
+        'room': room,
+      };
 }
 
 class AcademicPeriod {
@@ -114,4 +156,12 @@ class AcademicPeriod {
       type: json['type'] as String,
     );
   }
+
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'id': id,
+        'title': title,
+        'startDate': startDate,
+        'endDate': endDate,
+        'type': type,
+      };
 }

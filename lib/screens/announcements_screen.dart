@@ -79,13 +79,16 @@ class _AnnouncementsScreenState extends State<AnnouncementsScreen> {
                     ),
                   ),
                 )
-              : ListView.separated(
+              : ListView.builder(
                   padding: const EdgeInsets.all(16),
                   itemCount: _items.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 12),
                   itemBuilder: (BuildContext context, int i) {
                     final AnnouncementItem a = _items[i];
-                    return Card(
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        bottom: i < _items.length - 1 ? 12 : 0,
+                      ),
+                      child: Card(
                       child: Padding(
                         padding: const EdgeInsets.all(16),
                         child: Column(
@@ -123,6 +126,7 @@ class _AnnouncementsScreenState extends State<AnnouncementsScreen> {
                           ],
                         ),
                       ),
+                    ),
                     );
                   },
                 ),

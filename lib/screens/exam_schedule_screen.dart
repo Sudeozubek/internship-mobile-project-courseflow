@@ -77,13 +77,16 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
                     ),
                   ),
                 )
-              : ListView.separated(
+              : ListView.builder(
                   padding: const EdgeInsets.all(16),
                   itemCount: _items.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 10),
                   itemBuilder: (BuildContext context, int i) {
                     final ExamSlot e = _items[i];
-                    return Card(
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        bottom: i < _items.length - 1 ? 10 : 0,
+                      ),
+                      child: Card(
                       child: ListTile(
                         title: Text('${e.courseCode} · ${e.courseName}'),
                         subtitle: Padding(
@@ -104,6 +107,7 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
                         ),
                         isThreeLine: true,
                       ),
+                    ),
                     );
                   },
                 ),

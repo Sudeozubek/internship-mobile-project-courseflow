@@ -85,13 +85,16 @@ class _AcademicCalendarScreenState extends State<AcademicCalendarScreen> {
                     ),
                   ),
                 )
-              : ListView.separated(
+              : ListView.builder(
                   padding: const EdgeInsets.all(16),
                   itemCount: _items.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 10),
                   itemBuilder: (BuildContext context, int i) {
                     final AcademicPeriod p = _items[i];
-                    return Card(
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        bottom: i < _items.length - 1 ? 10 : 0,
+                      ),
+                      child: Card(
                       child: ListTile(
                         leading: CircleAvatar(
                           child: Text(
@@ -105,6 +108,7 @@ class _AcademicCalendarScreenState extends State<AcademicCalendarScreen> {
                         ),
                         isThreeLine: false,
                       ),
+                    ),
                     );
                   },
                 ),
