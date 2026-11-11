@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home_screen.dart';
+import '../app_routes.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -35,9 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
       return;
     }
     setState(() => _submitting = false);
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute<void>(builder: (_) => const HomeScreen()),
-    );
+    Navigator.of(context).pushReplacementNamed(AppRoutes.home);
   }
 
   void _forgotPassword() {

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'academic_calendar_screen.dart';
-import 'announcements_screen.dart';
-import 'assignments_screen.dart';
-import 'exam_schedule_screen.dart';
+import '../app_routes.dart';
+import '../services/want_api_service.dart';
 
 /// Portal-style home: kısayollar yerel JSON verilerine gider (arka uç yok).
 class DashboardScreen extends StatelessWidget {
@@ -17,6 +15,27 @@ class DashboardScreen extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
       children: <Widget>[
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: AspectRatio(
+            aspectRatio: 16 / 5,
+            child: Image.network(
+              WantApiService.bannerUrl,
+              fit: BoxFit.cover,
+              errorBuilder: (_, __, ___) => ColoredBox(
+                color: cs.primaryContainer,
+                child: Center(
+                  child: Icon(
+                    Icons.image_outlined,
+                    size: 40,
+                    color: cs.onPrimaryContainer,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
         Card(
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -57,12 +76,7 @@ class DashboardScreen extends StatelessWidget {
           title: 'Ödevler',
           subtitle: 'Ders kodu, teslim tarihi ve durum bilgisi.',
           onTap: () {
-            Navigator.push<void>(
-              context,
-              MaterialPageRoute<void>(
-                builder: (_) => const AssignmentsScreen(),
-              ),
-            );
+            Navigator.pushNamed(context, AppRoutes.assignments);
           },
         ),
         _sectionCard(
@@ -72,12 +86,7 @@ class DashboardScreen extends StatelessWidget {
           subtitle:
               'Kayıt, sınav ve burs duyuruları; tarih ve detay metinleri.',
           onTap: () {
-            Navigator.push<void>(
-              context,
-              MaterialPageRoute<void>(
-                builder: (_) => const AnnouncementsScreen(),
-              ),
-            );
+            Navigator.pushNamed(context, AppRoutes.announcements);
           },
         ),
         _sectionCard(
@@ -87,12 +96,7 @@ class DashboardScreen extends StatelessWidget {
           subtitle:
               'Vize, final ve bütünleme; tarih, saat ve salon bilgileri.',
           onTap: () {
-            Navigator.push<void>(
-              context,
-              MaterialPageRoute<void>(
-                builder: (_) => const ExamScheduleScreen(),
-              ),
-            );
+            Navigator.pushNamed(context, AppRoutes.examSchedule);
           },
         ),
         _sectionCard(
@@ -101,12 +105,7 @@ class DashboardScreen extends StatelessWidget {
           title: 'Akademik takvim',
           subtitle: 'Dönem, tatil ve sınav dönemleri; tarih aralıkları.',
           onTap: () {
-            Navigator.push<void>(
-              context,
-              MaterialPageRoute<void>(
-                builder: (_) => const AcademicCalendarScreen(),
-              ),
-            );
+            Navigator.pushNamed(context, AppRoutes.academicCalendar);
           },
         ),
       ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/login_screen.dart';
+import 'app_routes.dart';
 
 void main() {
   runApp(const CourseFlowApp());
@@ -62,7 +62,9 @@ class CourseFlowApp extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         ),
       ),
-      home: const LoginScreen(),
+      initialRoute: AppRoutes.login,
+      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

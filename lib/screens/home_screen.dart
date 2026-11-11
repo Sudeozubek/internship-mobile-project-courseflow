@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'courses_screen.dart';
 import 'dashboard_screen.dart';
 
-/// App shell: “Ana sayfa” portal stub + “Dersler” (courses grid).
+/// App shell: “Ana sayfa” portal + “Dersler” (API katalog ızgarası).
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
