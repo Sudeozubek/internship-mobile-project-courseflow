@@ -15,6 +15,7 @@ Aşağıdaki görseller `docs/screenshots/` klasöründe numaralı dosya adları
 | 9 | [09-terminal-flutter-analyze.png](screenshots/09-terminal-flutter-analyze.png) | Terminal: `flutter analyze` (sorun yok) |
 | 10 | [10-terminal-flutter-run-chrome.png](screenshots/10-terminal-flutter-run-chrome.png) | Terminal: `flutter run` — Chrome |
 | 11 | [11-terminal-flutter-run-macos.png](screenshots/11-terminal-flutter-run-macos.png) | Terminal: `flutter run` — macOS |
+| 12 | [12-ödev-detay-http-post.png](screenshots/12-ödev-detay-http-post.png) | Ödev detayı: **HTTP POST** teslim arayüzü |
 
 ## Önizleme (küçük)
 
@@ -30,6 +31,16 @@ Aşağıdaki görseller `docs/screenshots/` klasöründe numaralı dosya adları
   <td align="center"><a href="screenshots/06-duyurular.png"><img src="screenshots/06-duyurular.png" width="160" alt="Duyurular"/></a><br/><sub>06 — Duyurular</sub></td>
   <td align="center"><a href="screenshots/07-sınav-takvimi.png"><img src="screenshots/07-sınav-takvimi.png" width="160" alt="Sınav takvimi"/></a><br/><sub>07 — Sınav takvimi</sub></td>
   <td align="center"><a href="screenshots/08-akademik-takvim.png"><img src="screenshots/08-akademik-takvim.png" width="160" alt="Akademik takvim"/></a><br/><sub>08 — Akademik takvim</sub></td>
+</tr>
+</table>
+
+## HTTP API kanıtı (uygulama)
+
+GET (wantapi katalog + banner) ve POST (ödev teslimi) uygulama içinde kullanılır; örnek: ödev detayındaki **Ödevi yükle (HTTP POST)**.
+
+<table>
+<tr>
+  <td align="center"><a href="screenshots/12-ödev-detay-http-post.png"><img src="screenshots/12-ödev-detay-http-post.png" width="220" alt="Ödev detay HTTP POST"/></a><br/><sub>12 — Ödev detayı (HTTP POST)</sub></td>
 </tr>
 </table>
 

@@ -22,10 +22,26 @@ CourseFlow is a simple Flutter app for viewing courses from local JSON, opening 
 
 - **Giriş ekranı** (kullanıcı adı / şifre, şifremi unuttum), ardından ana kabuk
 - Bottom navigation: **Ana sayfa** (portal kartları; ödevler, duyurular, sınav / akademik takvim) ve **Dersler**
-- Course listing (`GridView.builder`), search/filter (by course name)
-- Course details (`Navigator.push` / `Navigator.pop`, `Course` via constructor)
-- Local JSON data (`assets/data/courses.json` ve portal listeleri `assets/data/*.json`)
-- Study task completion toggle on the detail screen (`StatefulWidget`)
+- **HTTP API**: katalog listesi [wantapi.com/products.php](https://wantapi.com/products.php), ana sayfa banner [wantapi.com/assets/banner.png](https://wantapi.com/assets/banner.png) (`dart:io` / web `HttpRequest`, ek paket yok); ağ hatasında `assets/data/courses.json` yedek
+- **Named routes** + route **arguments** (`Course` detay ekranı)
+- Course listing (`GridView.builder`), search/filter
+- Course details: `Image.network` / `Image.asset`, görev **Tamamlandı** state (`StatefulWidget`)
+- Portal listeleri yerel JSON (`assets/data/*.json`); ödev **detayında HTTP POST** (`httpbin.org/post`) ile teslim + **tamamlandı** state
+- Tüm portal listeleri `ListView.builder`
+
+## Eğitim yönergesi (PDF) uyumu
+
+| Yönerge | CourseFlow karşılığı |
+|--------|----------------------|
+| wantapi ürün API + banner | Dersler sekmesi + ana sayfa banner |
+| JSON model, fromJson/toJson | `Course`, `WantApiProduct`, portal modelleri |
+| GridView.builder + kart | `CoursesScreen` |
+| ListView.builder | Ödevler, duyurular, sınav, takvim |
+| Named routes + arguments | `app_routes.dart` (`Course`, `AssignmentItem`) |
+| Navigator push/pop | Giriş, portal, detay ekranları |
+| HTTP GET + POST (ek paket yok) | GET wantapi; POST ödev teslimi |
+| StatefulWidget state | Ders detayı “Tamamlandı”; ödev teslim / durum |
+| Asset + README + ekran görüntüleri | `assets/`, bu dosya, `docs/screenshots/` |
 
 ## Screenshots
 
@@ -43,6 +59,16 @@ Tüm görseller **`docs/screenshots/`** içinde; terminal kanıtları ayrıca pr
   <td align="center"><a href="docs/screenshots/06-duyurular.png"><img src="docs/screenshots/06-duyurular.png" width="160" alt="Duyurular"/></a><br/><sub>06 — Duyurular</sub></td>
   <td align="center"><a href="docs/screenshots/07-sınav-takvimi.png"><img src="docs/screenshots/07-sınav-takvimi.png" width="160" alt="Sınav takvimi"/></a><br/><sub>07 — Sınav takvimi</sub></td>
   <td align="center"><a href="docs/screenshots/08-akademik-takvim.png"><img src="docs/screenshots/08-akademik-takvim.png" width="160" alt="Akademik takvim"/></a><br/><sub>08 — Akademik takvim</sub></td>
+</tr>
+</table>
+
+### HTTP API kanıtı
+
+Ödev teslim ekranında **Ödevi yükle (HTTP POST)** (`httpbin.org/post`); katalog için GET wantapi. Küçük önizleme — tam görsel için tıklayın.
+
+<table>
+<tr>
+  <td align="center"><a href="docs/screenshots/12-ödev-detay-http-post.png"><img src="docs/screenshots/12-ödev-detay-http-post.png" width="220" alt="Ödev detay HTTP POST"/></a><br/><sub>12 — Ödev detayı (HTTP POST)</sub></td>
 </tr>
 </table>
 
